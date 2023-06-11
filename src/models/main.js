@@ -1,3 +1,5 @@
 module.exports = {
-    user:require('./users')
+    user:require('./users'),
+    group:require('./groupModel'),
+    product:require('./productModel')
 }

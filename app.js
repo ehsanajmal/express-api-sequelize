@@ -10,6 +10,7 @@ app.use(express.json());
 app.use('/api/v1', mainRoutes)
 
 
+
 app.get('/', (req,res)=>{
     return res.status(200).json({msg:"Hello i am an api and wokring fine"})
 })
