@@ -17,7 +17,7 @@ auth.register = async (req, res) => {
     if (user) {
       return res.status(200).json({ msg: "User Regostered", newUser: user });
     }
-  
+
     return res.status(400).json({ msg: "Something Went Wrong", newUser: user });
   } catch (error) {
     return res
@@ -39,7 +39,6 @@ auth.registerWithPin = async (req, res) => {
     if (user) {
       return res.status(200).json({ msg: "User Registered Successfully", newUser: user });
     }
-  
     return res.status(400).json({ msg: "Something Went Wrong", newUser: user });
   } catch (error) {
     return res
@@ -48,10 +47,8 @@ auth.registerWithPin = async (req, res) => {
   }
 };
 
-
 auth.login  = async (req,res)=>{
   try {
-   
     if (!(req.body.email || req.body.password)) {
       return res.status(404).json({ msg: "Please Input All Feilds" });
     }
@@ -72,9 +69,7 @@ auth.login  = async (req,res)=>{
      const token = await jwt.sign(data, process.env.SECRETE_KEY, {
       expiresIn:'2h'
      });
-    return res.status(200).json({status:true, msg: "Login Successfully", data: token }) 
-     
-    
+    return res.status(200).json({status:true, msg: "Login Successfully", data: token })     
   } catch (error) {
     return res
       .status(400)
